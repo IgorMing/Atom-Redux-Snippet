@@ -1,0 +1,84 @@
+'.source.js':
+  'Create simple component':
+    'prefix': 'comp'
+    'body': """
+import React from 'react';
+
+export default class $1 extends React.Component {
+	render() {
+		return(
+			$2
+		);
+	}
+}
+    """
+  'Create provider connector':
+    'prefix': 'conn'
+    'body': """
+@connect((store) => {
+  const { $1 } = store.$2;
+  return {
+    $3
+  };
+})
+    """
+   'Create smart component':
+    'prefix': 'smartcomp'
+    'body': """
+import React from 'react';
+import { connect } from "react-redux";
+
+import { $2 } from '../../actions/$1Action';
+
+@connect((store) => {
+  const { $5 } = store.$6;
+  return {
+    $7
+  };
+})
+
+export default class $1 extends React.Component {
+  render() {
+    return(
+      $4
+    );
+  }
+}
+   """
+   'Create Action':
+    'prefix': 'action'
+    'body': """
+export function $1() {
+	return dispatch => {
+		dispatch({
+			type: "$2",
+			data: {}
+
+		});
+	}
+}
+    """
+   'Create Reducer':
+    'prefix': 'reducer'
+    'body': """
+export default function reducer(state={
+    $2
+  }, action) {
+
+    switch (action.type) {
+      case $1: {
+        return {
+          ...state,
+          $3
+        }
+      } break;
+      case 'ERROR': {
+        return {
+          ...state,
+          $4
+        }
+      } break;
+    }
+    return state
+}
+    """
