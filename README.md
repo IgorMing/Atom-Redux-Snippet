@@ -1,8 +1,8 @@
 # ATOM-REDUX-SNIPPET
 
-A snippet for help you to develop making the massive work fast.
+A snippet to help you develop massive work faster
 
-Getting Startet
+Getting Started
 ==========
 
 Clone this repo
