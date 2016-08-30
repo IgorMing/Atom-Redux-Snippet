@@ -14,7 +14,7 @@ Copy the `snippets.cson` file to your directory, running the command
 
 `cp -f ~/.atom/snippets.cson`
 
-Enough. Just enjoy some awesome autocompletes.
+That's it. Just enjoy some awesome autocompletes.
 
 Viable command snippets
 ==========
