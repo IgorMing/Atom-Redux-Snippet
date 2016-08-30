@@ -23,7 +23,7 @@ Write the following command and then, press `TAB`
 
 `comp`
 ---
-Create a simplest component
+Create a simple component
 
 `conn` 
 ---
