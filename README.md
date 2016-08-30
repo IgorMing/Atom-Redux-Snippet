@@ -10,7 +10,7 @@ Clone this repo
 `git clone git@github.com:IgorMing/Atom-Redux-Snippet.git`
 > If you don't have ssh access, clone with https.
 
-Copy the `snippets.cson` file for you directory, running the command
+Copy the `snippets.cson` file to your directory, running the command
 
 `cp -f ~/.atom/snippets.cson`
 
