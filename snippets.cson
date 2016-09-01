@@ -2,9 +2,9 @@
   'Create simple component':
     'prefix': 'comp'
     'body': """
-import React from 'react';
+import React, { Component } from 'react';
 
-export default class $1 extends React.Component {
+export default class $1 extends Component {
 	render() {
 		return(
 			$2
@@ -15,17 +15,12 @@ export default class $1 extends React.Component {
   'Create provider connector':
     'prefix': 'conn'
     'body': """
-@connect((store) => {
-  const { $1 } = store.$2;
-  return {
-    $3
-  };
-})
+export default connect(mapStateToProps)($1);
     """
    'Create smart component':
     'prefix': 'smartcomp'
     'body': """
-import React from 'react';
+import React, { Component } from 'react';
 import { connect } from "react-redux";
 
 import { $2 } from '../../actions/$1Action';
@@ -37,7 +32,7 @@ import { $2 } from '../../actions/$1Action';
   };
 })
 
-export default class $1 extends React.Component {
+export default class $1 extends Component {
   render() {
     return(
       $4
@@ -81,4 +76,64 @@ export default function reducer(state={
     }
     return state
 }
+    """
+   'Import Var':
+    'prefix': 'impvar'
+    'body': """
+import { $1 } from '$2';
+    """
+   'Import Var':
+    'prefix': 'imp'
+    'body': """
+import $1 from '$1';
+    """
+   'Import':
+    'prefix': 'testcomp'
+    'body': """
+import { renderComponent, expect } from '../test_helper';
+import $1 from '../../src/components/$2';
+
+describe('$1', () => {
+
+    it('my test description', () => {
+      const component = renderComponent($1)
+      expect(component).to.contain('my comment');
+    });
+
+});
+    """
+   'Test Component':
+    'prefix': 'testcomp'
+    'body': """
+import { renderComponent, expect } from '../test_helper';
+import $1 from '../../src/components/$2';
+
+describe('$1', () => {
+
+    it('my test description', () => {
+      const component = renderComponent($1)
+      expect(component).to.contain('my comment');
+    });
+
+});
+    """
+   'Test Action':
+    'prefix': 'testaction'
+    'body': """
+import { expect } from '../test_helper';
+
+describe('Actions', () => {
+
+  describe('My describe', () => {
+
+    it('Has the correct type', () => {
+      $1
+    });
+
+    it('Has the correct data', () => {
+
+    });
+
+  });
+});
     """
