@@ -12,9 +12,15 @@ export default class $1 extends Component {
 	}
 }
     """
-  'Create provider connector':
+  'Create provider connector and function':
     'prefix': 'conn'
     'body': """
+function mapStateToProps(state) {
+  return {
+    $2: state.$2
+  };
+}
+
 export default connect(mapStateToProps)($1);
     """
    'Create smart component':
@@ -74,20 +80,20 @@ export default function reducer(state={
         }
       } break;
     }
-    return state
+    return state;
 }
     """
-   'Import Var':
+   'get var':
     'prefix': 'impvar'
     'body': """
 import { $1 } from '$2';
     """
-   'Import Var':
+   'Import':
     'prefix': 'imp'
     'body': """
 import $1 from '$1';
     """
-   'Import':
+   'Test Component':
     'prefix': 'testcomp'
     'body': """
 import { renderComponent, expect } from '../test_helper';
@@ -137,3 +143,23 @@ describe('Actions', () => {
   });
 });
     """
+'Test Action':
+ 'prefix': 'testaction'
+ 'body': """
+import { expect } from '../test_helper';
+
+describe('Actions', () => {
+
+describe('My describe', () => {
+
+ it('Has the correct type', () => {
+   $1
+ });
+
+ it('Has the correct data', () => {
+
+ });
+
+});
+});
+ """
