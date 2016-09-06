@@ -23,28 +23,26 @@ function mapStateToProps(state) {
 
 export default connect(mapStateToProps)($1);
     """
-   'Create smart component':
-    'prefix': 'smartcomp'
+   'Create High Order Component':
+    'prefix': 'hoc'
     'body': """
 import React, { Component } from 'react';
-import { connect } from "react-redux";
+import { connect } from 'react-redux';
 
-import { $2 } from '../../actions/$1Action';
-
-@connect((store) => {
-  const { $5 } = store.$6;
-  return {
-    $7
-  };
-})
-
-export default class $1 extends Component {
+class $1 extends Component {
   render() {
-    return(
-      $4
-    );
+    return();
   }
+
 }
+
+function mapStateToProps(state) {
+  return {
+    $2: state.$2
+  };
+}
+
+export default connect(mapStateToProps, null)($1);
    """
    'Create Action':
     'prefix': 'action'
