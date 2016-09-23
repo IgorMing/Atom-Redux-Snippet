@@ -15,11 +15,16 @@ export default class $1 extends Component {
   'Create provider connector and function':
     'prefix': 'conn'
     'body': """
-function mapStateToProps(state) {
-  return {
-    $2: state.$2
-  };
-}
+import { connect } from 'react-redux';
+
+/**
+* Convert application state to props.
+* @param {Object} state - Application state
+* @returns {Object} Updated props
+*/
+const mapStateToProps = (state) => {
+  return { $2: state.$2 };
+};
 
 export default connect(mapStateToProps)($1);
     """
