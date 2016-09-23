@@ -47,38 +47,53 @@ export default connect(mapStateToProps, null)($1);
    'Create Action':
     'prefix': 'action'
     'body': """
-export function $1() {
-	return dispatch => {
-		dispatch({
-			type: "$2",
-			data: {}
+import { $2 } from './types';
 
-		});
-	}
-}
+export const $1 = (locale) => {
+  return {
+    data: {$3},
+    type: $2
+  };
+};
+    """
+   'Action thunk':
+    'prefix': 'thunk'
+    'body': """
+import { $2 } from './types';
+
+export const $1 = (locale) => {
+  return (dispatch) => {
+    dispatch({
+      data: {$3},
+      type: $2
+    });
+  };
+};
     """
    'Create Reducer':
     'prefix': 'reducer'
     'body': """
-export default function reducer(state={
-    $2
-  }, action) {
+import { $1 } from '../actions/types';
 
+const defaultState = {};
+
+/**
+* @param {Object} state - Default aplication state
+* @param {Object} action - Action from action creator
+* @returns {Object} New state
+*/
+export default function reducer (state = defaultState, action) {
     switch (action.type) {
       case $1: {
         return {
           ...state,
-          $3
-        }
-      } break;
-      case 'ERROR': {
-        return {
-          ...state,
-          $4
-        }
-      } break;
+          ...action.data
+        };
+      }
+      default: {
+        return { ...state };
+      }
     }
-    return state;
 }
     """
    'get var':
@@ -144,8 +159,6 @@ describe('Actions', () => {
 'Test Action':
  'prefix': 'testaction'
  'body': """
-import { expect } from '../test_helper';
-
 describe('Actions', () => {
 
 describe('My describe', () => {

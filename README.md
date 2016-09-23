@@ -25,13 +25,13 @@ Write the following command and then, press `TAB`
 ---
 Create a simple component
 
-`conn` 
+`conn`
 ---
 Create a provider connector
 
-`smartcomp`
+`hoc`
 ---
-Create a Smart Component, with the basic necessary
+Create a High Order Component, with the basic necessary
 
 `reducer`
 ---
@@ -39,4 +39,16 @@ Create a reducer page
 
 `action`
 ---
-Create an action page
+Create an action structure
+
+`thunk`
+---
+Create an action with dispatchers (thunk concept)
+
+`imp`
+---
+Import a required dependency
+
+`impvar`
+---
+Import variable from required dependency
