@@ -112,70 +112,19 @@ import { $1 } from '$2';
 import $1 from '$1';
     """
    'Test Component':
-    'prefix': 'testcomp'
+    'prefix': 'test'
     'body': """
-import { renderComponent, expect } from '../test_helper';
-import $1 from '../../src/components/$2';
+import React from 'react';
+import { mount } from 'enzyme';
+import $1 from '$1';
 
+/* eslint no-undef: "off" */
 describe('$1', () => {
+    it('$2', () => {
+      const wrapper = mount(<$1 />);
 
-    it('my test description', () => {
-      const component = renderComponent($1)
-      expect(component).to.contain('my comment');
+      expect(true).toBe(true);
     });
 
 });
     """
-   'Test Component':
-    'prefix': 'testcomp'
-    'body': """
-import { renderComponent, expect } from '../test_helper';
-import $1 from '../../src/components/$2';
-
-describe('$1', () => {
-
-    it('my test description', () => {
-      const component = renderComponent($1)
-      expect(component).to.contain('my comment');
-    });
-
-});
-    """
-   'Test Action':
-    'prefix': 'testaction'
-    'body': """
-import { expect } from '../test_helper';
-
-describe('Actions', () => {
-
-  describe('My describe', () => {
-
-    it('Has the correct type', () => {
-      $1
-    });
-
-    it('Has the correct data', () => {
-
-    });
-
-  });
-});
-    """
-'Test Action':
- 'prefix': 'testaction'
- 'body': """
-describe('Actions', () => {
-
-describe('My describe', () => {
-
- it('Has the correct type', () => {
-   $1
- });
-
- it('Has the correct data', () => {
-
- });
-
-});
-});
- """
