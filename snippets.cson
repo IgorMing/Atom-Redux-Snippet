@@ -54,7 +54,7 @@ export default connect(mapStateToProps, null)($1);
     'body': """
 import { $2 } from './types';
 
-export const $1 = (locale) => {
+export const $1 = () => {
   return {
     data: {$3},
     type: $2
@@ -78,7 +78,7 @@ export const $1 = (locale) => {
    'Create Reducer':
     'prefix': 'reducer'
     'body': """
-import { $1 } from '../actions/types';
+import { $1 } from '../constants/types';
 
 const defaultState = {};
 
