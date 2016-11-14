@@ -21,6 +21,10 @@ Viable command snippets
 
 Write the following command and then, press `TAB`
 
+'scomp'
+---
+Create a stateless component
+
 `comp`
 ---
 Create a simple component
