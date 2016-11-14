@@ -1,4 +1,22 @@
 '.source.js':
+
+  'Create a stateless component':
+    'prefix': 'scomp'
+    'body': """
+import React, {PropTypes} from 'react';
+
+const $1 = (props) => {
+   return (
+      $2 
+   );
+};
+
+$1.propTypes = {
+   $3
+}
+
+export default $1;
+"""
   'Create simple component':
     'prefix': 'comp'
     'body': """
