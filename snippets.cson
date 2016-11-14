@@ -84,7 +84,7 @@ export const $1 = () => {
     'body': """
 import { $2 } from './types';
 
-export const $1 = (locale) => {
+export const $1 = () => {
   return (dispatch) => {
     dispatch({
       data: {$3},
@@ -114,7 +114,7 @@ export default function reducer (state = defaultState, action) {
         };
       }
       default: {
-        return { ...state };
+        return state;
       }
     }
 }
