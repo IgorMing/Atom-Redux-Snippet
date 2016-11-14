@@ -21,7 +21,7 @@ Viable command snippets
 
 Write the following command and then, press `TAB`
 
-'scomp'
+`scomp`
 ---
 Create a stateless component
 
