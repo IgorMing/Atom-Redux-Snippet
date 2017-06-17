@@ -3,17 +3,10 @@
   'Create a stateless component':
     'prefix': 'scomp'
     'body': """
-import React, {PropTypes} from 'react';
+import React from 'react';
 
-const $1 = (props) => {
-   return (
-      $2 
-   );
-};
-
-$1.propTypes = {
-   $3
-}
+const $1 = () =>
+  $2
 
 export default $1;
 """
